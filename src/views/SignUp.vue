@@ -1,30 +1,36 @@
 <script setup>
 import { ref } from "vue";
-import { useRouter } from "vue-router";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase";
+import { useStore } from "vuex";
 
-const email = ref("");
-const password = ref("");
-const router = useRouter();
+const register_form = ref({});
+const store = useStore();
 
-const signup = () => {
-  createUserWithEmailAndPassword(auth, email.value, password.value).then(
-    (data) => {
-      console.log("successfully signup");
-      console.log(auth.currentUser);
-      router.push("/feed");
-    }
-  );
+const register = () => {
+  store.dispatch("register", register_form.value);
 };
 </script>
 
 <template>
-  <div>
-    <h1>Signup</h1>
-    <input type="email" placeholder="Email" v-model="email" /><br />
-    <input type="password" placeholder="Password" v-model="password" /><br />
-    <button @click="signup">Submit</button><br />
-    <button @click="signInWithGoogle">Sign in with google</button><br />
-  </div>
+  <form class="register" @submit.prevent="register">
+    <h2>Register</h2>
+    <input
+      type="email"
+      placeholder="Email address"
+      v-model="register_form.email"
+      required
+    />
+    <input
+      type="password"
+      placeholder="Password"
+      v-model="register_form.password"
+      required
+    />
+    <input type="submit" value="Register" />
+    <p>
+      <small>
+        You have an account?
+        <RouterLink to="/login">go back to login!</RouterLink>
+      </small>
+    </p>
+  </form>
 </template>

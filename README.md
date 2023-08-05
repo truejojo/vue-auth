@@ -1,3 +1,9 @@
+# vue auth 
+## youtube, Internetseiten:
+### https://vueschool.io/courses/vue-router-4-for-everyone
+### https://www.youtube.com/watch?v=Kc-FbPSdezg
+### https://medium.com/@andrewmasonmedia/how-to-use-environmental-variables-env-in-vue-js-and-vite-ac2ee73480dd
+
 # Vue 3 + Vite
 
 This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.

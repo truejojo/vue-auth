@@ -13,11 +13,11 @@ const routes = [
     name: "login",
     component: () => import("../views/Login.vue"),
   },
-  // {
-  //   path: "/signup",
-  //   name: "signup",
-  //   component: () => import("../views/SignUp.vue"),
-  // },
+  {
+    path: "/signup",
+    name: "signup",
+    component: () => import("../views/SignUp.vue"),
+  },
   {
     path: "/feed",
     name: "feed",
@@ -29,7 +29,8 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  // history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(),
   routes,
 });
 
